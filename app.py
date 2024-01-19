@@ -14,6 +14,7 @@ else:
     status_flask = False
 sock.close()
 
+my_env = os.environ.copy()
 
 stop_flask = False
 start_flask = False
