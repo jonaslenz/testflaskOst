@@ -1,8 +1,8 @@
 # hello.py
 
-from flask import Flask, jsonify, request
+import flask
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 @app.route("/")
 def hello_world():
@@ -16,12 +16,12 @@ incomes = [
 
 @app.route('/incomes')
 def get_incomes():
-    return jsonify(incomes)
+    return flask.jsonify(incomes)
 
 
 @app.route('/incomes', methods=['POST'])
 def add_income():
-    incomes.append(request.get_json())
+    incomes.append(flask.request.get_json())
     return '', 204
 
 if __name__ == "__main__":
