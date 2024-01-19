@@ -24,7 +24,7 @@ if not status_flask:
     start_flask = st.button("Start the server")
 
     if start_flask:
-        st.session_state.a = subprocess.Popen(["python", "hello1.py"], start_new_session = True, stdout = None, stdin=None, stderr= None)
+        st.session_state.a = subprocess.Popen(["python", "hello1.py"], start_new_session = True, stdout = None, stdin=None, stderr= None, env=my_env)
 
 else:
     st.write("Server is up.")
